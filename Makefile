@@ -6,14 +6,12 @@ LDLIBS = -lz
 
 # source files
 FINDPNG_SRCS   = findpng.c crc.c
-CATPNG_SRCS = catpng.c zutil.c crc.c
 
 # object files
 FINDPNG_OBJS = $(FINDPNG_SRCS:.c=.o)
-CATPNG_OBJS = $(CATPNG_SRCS:.c=.o)
 
 # targets
-TARGETS= findpng catpng
+TARGETS= findpng
 
 # header files
 # DEPS = png_def.h
@@ -21,9 +19,6 @@ TARGETS= findpng catpng
 all: $(TARGETS)
 
 findpng: $(FINDPNG_OBJS) 
-	$(LD) $(LDFLAGS) -o $@ $^ $(LDLIBS)
-
-catpng: $(CATPNG_OBJS)
 	$(LD) $(LDFLAGS) -o $@ $^ $(LDLIBS)
 
 .c.o:
@@ -34,4 +29,4 @@ catpng: $(CATPNG_OBJS)
 
 .PHONY: clean
 clean:
-	rm -f *.d *.o $(CATPNG_OBJS) $(FINDPNG_OBJS) $(TARGETS)
+	rm -f *.d *.o $(FINDPNG_OBJS) $(TARGETS)
