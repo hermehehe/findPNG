@@ -5,7 +5,7 @@
 #include <stdio.h>  /* for printf().  man 3 printf */
 #include <stdlib.h> /* for exit().    man 3 exit   */
 #include <string.h> /* for strcat().  man strcat   */
-#include "prelab1/png_def.h" 
+#include "png_def.h" 
 
 void readpath(const char *str_dir, int *found_png)
 {
